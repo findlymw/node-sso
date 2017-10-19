@@ -10,6 +10,8 @@ https://semantic-ui.com/
 npm install semantic-ui --save
 cd semantic/
 gulp build
+~~~
+
 
 #### 组件
 ~~~ javascript
@@ -68,6 +70,7 @@ gulp build
     "gulp-jsdoc3": "^1.0.1"
   }
 }
+~~~
 
 
 
