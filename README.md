@@ -15,7 +15,6 @@ web框架使用 Express4.15.5 + jade + less + semantic-ui
 #### 配置说明
 ##### 系统配置
 ~~~ javascript 1.8
-'use strict';
 const redisConfig = {
     redisIP : 'redis的IP地址',
     redisPort : 'redis的端口',
@@ -58,7 +57,7 @@ exports.config = {
 ~~~
 
 ##### pm2启动配置
-~~~ json
+~~~ javascript 1.8
 {
   "apps": {
     "name": "node-sso",//启动后的名称
