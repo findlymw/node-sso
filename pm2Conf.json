@@ -1,0 +1,22 @@
+{
+  "apps": {
+    "name": "node-sso",
+    "cwd": "/Users/apple/Documents/workspace/github/node-sso",
+    "script": "./bin/www",
+    "min_uptime": "60s",
+    "max_restarts": 3,
+    "max_memory_restart": "128M",
+    "instances": "max",//max
+    "exec_mode": "cluster",
+    "error_file": "/Users/apple/Documents/workspace/github/logs/pm2-err.log",
+    "out_file": "/Users/apple/Documents/workspace/github/logs/pm2-out.log",
+    "pid_file": "/Users/apple/Documents/workspace/github/logs/nodesso.pid",
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "combine_logs": true,
+    "merge_logs": true,
+    "watch": true
+  }
+}

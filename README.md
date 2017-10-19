@@ -1,6 +1,6 @@
 # node-sso
 这是一个基于NodeJS的SSO项目，支持NodeJS、java等多类型项目的接入。
-web框架使用 Express4.15.5 + jade + less
+web框架使用 Express4.15.5 + jade + less + semantic-ui
 
 #### 构建Express + jade项目
 * 安装Node环境，包含npm

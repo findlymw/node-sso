@@ -4,26 +4,43 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
+var config = require('./src/config/config').config;
+var session = require('express-session');
+var RedisStrore = require('connect-redis')(session);
 
 var app = express();
+app.set('trust proxy', config.proxyConfig);
+
+app.use(session({
+    key: config.sessionKey,
+    name:config.cookieName,
+    secret : config.sessionSecret,
+    resave : true,
+    saveUninitialized : true,
+    cookie : require('./src/config/config').cookie,
+    store : config.sessionStoreType === 2 ? new RedisStrore(require('./src/config/config').sessionStore) : null
+}));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+if(config.favicon === true){
+    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+}
+app.use(logger(config.morganLevel));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser(config.sessionSecret,config.cookie));
+app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+
+//仅需要require路由模块
+app.use(require('./routes/Routers'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

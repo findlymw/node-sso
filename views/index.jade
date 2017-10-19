@@ -1,5 +1,29 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .ui.middle.aligned.center.aligned.grid
+    .sixteen.wide.column
+      h2.ui.teal.image.header
+        img.image(src="/images/logo.png" style="border-radius:8px")
+        .content #{title}
+      form.ui.large.form
+        .ui.stacked.segment
+          .field
+            .ui.left.icon.input
+              i.user.icon
+              input(type="text" name="email" placeholder="E-mail address" maxlength="50")
+          .field
+            .ui.left.icon.input
+              i.lock.icon
+              input(type="password" name="password" placeholder="Password" maxlength="20")
+          .field
+            .ui.right.labeled.left.icon.input
+              i.tags.icon
+              input(type="text" name="randomcode" placeholder="Verification Code" maxlength="4")
+              a.ui.tag.label
+                .randomcode
+          .ui.fluid.large.teal.submit.button Login
+        .ui.error.message
+      .ui.message New to us?
+        a(href="#") Sign Up
+  script(src="/javascripts/index.js")

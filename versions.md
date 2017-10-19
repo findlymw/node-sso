@@ -3,6 +3,14 @@
 初始化项目
 ### v0.0.2
 安装相关组件和配置构建工具
+#### UI Framework
+https://semantic-ui.com/
+##### Install Semantic UI
+~~~ shell
+npm install semantic-ui --save
+cd semantic/
+gulp build
+
 #### 组件
 ~~~ javascript
 {
@@ -51,10 +59,13 @@
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "gulp-html-replace": "^1.6.2",
+    "yargs": "^7.0.2",
     "gulp-jsdoc3": "^1.0.1"
   }
 }
-~~~ javascript
+
+
+
 
 
 

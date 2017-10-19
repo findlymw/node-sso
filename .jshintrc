@@ -1,0 +1,38 @@
+{
+  "camelcase": true,
+  "indent": 2,
+  "quotmark": "single",
+  "unused": false,
+  "strict": true,
+  "sub":true,
+  "laxbreak":true,
+  "laxcomma":true,
+  "regexp":true,
+  "asi": true,
+  "loopfunc":true,
+  "expr":true,
+  "node": true,
+  "es5": true,
+  "esnext": true,
+  "bitwise": true,
+  "curly": true,
+  "immed": true,
+  "latedef": true,
+  "eqeqeq": false,
+  "eqnull": false,
+  "newcap": true,
+  "noarg": true,
+  "undef": true,
+  "proto": true,
+  "smarttabs": true,
+  "onecase":true,
+  "lastsemic":true,
+  "jquery":true,
+  "browser":true,
+  "evil" : true,
+  "globals" : {
+    //忽略某个符号或者方法，一般建议在代码中使用jshint ignore:start & jshint jgnore:end 进行忽略
+    // "checkMobile" : true
+  }
+
+}
