@@ -2,6 +2,21 @@
 这是一个基于NodeJS的SSO项目，支持NodeJS、java等多类型项目的接入。
 web框架使用 Express4.15.5 + jade + less + semantic-ui
 
+### Quick Start
+Install dependencies:
+~~~ shell
+npm install -g pm2
+npm install
+~~~
+Start app at http://localhost:3000/:
+~~~ shell
+node ./bin/www
+~~~
+or
+~~~ shell
+pm2 start pm2Conf.json
+~~~
+
 #### 构建Express + jade项目
 * 安装Node环境，包含npm
 * 全局安装 npm install -g express-generator
@@ -11,6 +26,8 @@ web框架使用 Express4.15.5 + jade + less + semantic-ui
 * 完成Express项目的构建
 * npm start
 * 访问http://localhost:3000
+
+
 
 #### 配置说明
 ##### 系统配置
